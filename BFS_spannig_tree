@@ -14,7 +14,7 @@ int main()
             visited[i]=0;
         }
     ///scan the graph connections
-    printf("Enter 1 if node are connected else enter 0 \n")
+    printf("Enter 1 if node are connected else enter 0 \n");
     for(i=1;i<=n;i++)
         {
             for(j=i+1;j<=n;j++)
