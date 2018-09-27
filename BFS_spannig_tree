@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+//DNT FURY
+int main()
+{
+    printf("BFS SPANNING TREE\n");
+    int a[10][10],visited[10];
+    int n,i,j;
+    printf("Enter number of nodes:");
+    scanf("%d",&n);
+    ///this for loop for making all node unvisited initially
+    for(i=1;i<=n;i++)
+        {
+            visited[i]=0;
+        }
+    ///scan the graph connections
+    printf("Enter 1 if node are connected else enter 0 \n")
+    for(i=1;i<=n;i++)
+        {
+            for(j=i+1;j<=n;j++)
+                {
+                    printf("\nNODE:%d---NODE:%d  are connected:",i,j);
+                    scanf("%d",&a[i][j]);
+                }
+        }
+    ///implement logic
+    printf("\n----PRINTING CONNECTION FOR SPANNING TREE------\n");
+    for(i=1;i<=n;i++)
+        {
+            for(j=i+1;j<=n;j++)
+                {
+                    if(a[i][j]==1 && visited[j]==0)  ///visited [j] for BFS
+                        {
+                            printf("NODE:%d--connected to----NODE:%d\n",i,j);
+                            visited[j]=1;              ///visited [j] for BFS
+                        }
+                }
+        }
+    return 0;
+}
